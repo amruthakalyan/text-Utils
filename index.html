@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javaScript practice</title>
+</head>
+<style>
+    body{
+        margin: 50px ;
+        height: 200px;
+    }
+    h1{
+        text-align: center;
+        margin: 0px ;
+        background-color: gainsboro;
+    }
+    #textbox{
+        width: 99.2%;
+        height: 150px;
+        margin: 0px;
+    }
+    label{
+        margin: 0px;
+    }
+    label h3{
+        margin: 0px;
+    }
+</style>
+<body>
+    <h1>TextUtils</h1>
+    <div class="container">
+        <textarea id="textbox"></textarea>
+        <button id="btn">Uppercase</button>
+        <button id="btnL">Lowercase</button>
+        <button id="clear">Clear</button>
+        <span id="words">0</span>words <span id="char">0</span>characters
+        <label><h3>Preview</h3></label>
+        <p id="para"></p>
+        
+    </div>
+</body>
+<script>
+    let textbox = document.getElementById("textbox");
+    let para = document.getElementById("para");
+    textbox.addEventListener("input",()=>{
+     para.innerHTML=textbox.value;
+    });
+    let btn = document.getElementById("btn");
+    btn.addEventListener("click",function(){
+        textbox.value=textbox.value.toUpperCase();
+    })
+    let btnL = document.getElementById("btnL");
+    btnL.addEventListener("click",function(){
+        textbox.value=textbox.value.toLowerCase();
+    })
+    let clear = document.getElementById("clear");
+    clear.addEventListener("click",function(){
+        textbox.value="";
+    })
+    clear.addEventListener("click",function(){
+        para.innerHTML="";
+    })
+    
+</script>
+</html>
